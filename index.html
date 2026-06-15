@@ -4,23 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALIMDAR | Članstvo i ATUtility</title>
-  <meta name="description" content="ALIMDAR – Tehnološko-savjetodavni centar za Blockchain, Web3 i digitalne tehnologije. Članstvo, savjetovanje i ATUtility." />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stil.css" />
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="ALIMDAR početna">
-        <span class="logo">ATU</span>
-        <span>ALIMDAR</span>
+        <img class="brand-logo" src="assets/atu-logo.png" alt="ATUtility logo" onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='grid';" />
+        <span class="logo-fallback">ATU</span>
+        <span>
+          <strong>ALIMDAR</strong><br />
+          <small>Tehnološko-savjetodavni centar</small>
+        </span>
       </a>
+
       <nav>
         <a href="#membership">Članstvo</a>
         <a href="#atu">ATU</a>
         <a href="#payment">Plaćanje</a>
         <a href="#contact">Kontakt</a>
-        <button class="lang-btn active" id="btn-hr" onclick="setLang('hr')">🇭🇷 HR</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+        <button class="lang-btn active" id="btn-hr" type="button" onclick="setLang('hr')">🇭🇷 HR</button>
+        <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">🇬🇧 EN</button>
       </nav>
     </div>
   </header>
@@ -30,20 +34,27 @@
       <section class="hero">
         <div class="wrap grid2">
           <div>
-            <div class="badge">Tehnološko-savjetodavni centar · Blockchain · Web3 · AI</div>
+            <div class="badge">Blockchain · Web3 · AI · Savjetovanje · ATUtility</div>
             <h1>Tehnologija nije bauk. Tehnologija je alat.</h1>
-            <p class="lead">ALIMDAR pomaže ljudima razumjeti i koristiti moderne tehnologije kroz savjetovanje, praktične primjere i stvarne projekte.</p>
+            <p class="lead">
+              ALIMDAR je tehnološko-savjetodavni centar za Blockchain, Web3 i digitalne tehnologije.
+              Članstvom ulazite u zajednicu, dobivate savjetovanje i mogućnost dodjele ATUtility (ATU) tokena.
+            </p>
             <div class="actions">
               <a class="btn primary" href="#membership">Postani član</a>
-              <button class="btn gold" onclick="connectWallet()">Poveži MetaMask</button>
-              <a class="btn" href="#contact">Pošalji upit</a>
+              <button class="btn gold" type="button" onclick="connectWallet()">Poveži MetaMask</button>
+              <a class="btn" href="#contact">Kontakt / upit</a>
             </div>
             <div class="status" id="walletStatusHr">Wallet nije povezan.</div>
           </div>
-          <div class="card center-card">
-            <div class="coin">ATU</div>
+
+          <div class="card center">
+            <img class="hero-logo" src="assets/atu-logo.png" alt="ATUtility logo" onerror="this.style.display='none';" />
+            <div class="coin-fallback">ATU</div>
             <h2>ATUtility</h2>
-            <p class="muted">Utility token ALIMDAR zajednice za članstvo, pogodnosti, digitalne sadržaje i buduće usluge.</p>
+            <p class="muted">
+              Utility token ALIMDAR ekosustava za članstvo, pogodnosti, digitalne sadržaje i buduće usluge.
+            </p>
           </div>
         </div>
       </section>
@@ -51,47 +62,58 @@
       <section id="membership">
         <div class="wrap">
           <h2>Članstvo u ALIMDAR zajednici</h2>
-          <p class="lead">Kad se pretplatite i uđete u zajednicu, tada počinje savjetovanje, razvoj i praktična primjena tehnologije.</p>
+          <p class="lead">
+            Kad se pretplatite i uđete u zajednicu, tada počinje razvoj, savjetovanje i praktična primjena tehnologije.
+          </p>
 
           <div class="pricing">
-            <div class="price-card">
+            <article class="price-card">
               <h3>Osnovno članstvo</h3>
               <div class="price">€19</div>
-              <div class="per">mjesečno · informativno ≈ 21 USDC</div>
+              <div class="per">mjesečno / informativno</div>
               <ul>
                 <li>Pristup zajednici</li>
-                <li>Osnovni vodiči i novosti</li>
+                <li>Osnovni vodiči i obavijesti</li>
                 <li>Email upiti</li>
-                <li>ATU pogodnost: 100 ATU</li>
+                <li>ATU dodjela nakon potvrde pretplate</li>
               </ul>
-              <button class="btn primary" onclick="selectPlan('Osnovno članstvo',19,21,100)">Odaberi</button>
-            </div>
+              <button class="btn primary" type="button" onclick="selectPlan('Osnovno članstvo',19,100)">Odaberi</button>
+            </article>
 
-            <div class="price-card popular">
-              <span class="tag">Preporučeno</span>
+            <article class="price-card popular">
+              <span class="tag">Preporuka</span>
               <h3>Savjetodavno članstvo</h3>
               <div class="price">€49</div>
-              <div class="per">mjesečno · informativno ≈ 53 USDC</div>
+              <div class="per">mjesečno / informativno</div>
               <ul>
                 <li>Sve iz osnovnog članstva</li>
                 <li>Tehnološko savjetovanje</li>
                 <li>AI, Web3 i digitalni alati</li>
-                <li>ATU pogodnost: 300 ATU</li>
+                <li>Veća ATU dodjela nakon potvrde pretplate</li>
               </ul>
-              <button class="btn gold" onclick="selectPlan('Savjetodavno članstvo',49,53,300)">Odaberi</button>
-            </div>
+              <button class="btn gold" type="button" onclick="selectPlan('Savjetodavno članstvo',49,300)">Odaberi</button>
+            </article>
 
-            <div class="price-card">
+            <article class="price-card">
               <h3>Poslovno članstvo</h3>
               <div class="price">€129</div>
-              <div class="per">mjesečno · informativno ≈ 139 USDC</div>
+              <div class="per">mjesečno / informativno</div>
               <ul>
-                <li>Podrška za obrte i tvrtke</li>
+                <li>Za obrte, firme i projekte</li>
                 <li>Digitalna transformacija</li>
-                <li>Projektna podrška</li>
-                <li>ATU pogodnost: 1000 ATU</li>
+                <li>Blockchain i Web3 savjetovanje</li>
+                <li>Poslovna ATU dodjela nakon potvrde pretplate</li>
               </ul>
-              <button class="btn primary" onclick="selectPlan('Poslovno članstvo',129,139,1000)">Odaberi</button>
+              <button class="btn primary" type="button" onclick="selectPlan('Poslovno članstvo',129,1000)">Odaberi</button>
+            </article>
+          </div>
+
+          <div class="card notice mt">
+            <h3>Odabrani paket</h3>
+            <div id="selectedPlanHr">Još nije odabran paket.</div>
+            <div class="actions">
+              <a class="btn gold" href="#payment">Nastavi na plaćanje</a>
+              <a class="btn" href="#contact">Pošalji upit emailom</a>
             </div>
           </div>
         </div>
@@ -100,60 +122,102 @@
       <section id="atu">
         <div class="wrap grid2">
           <div>
-            <h2>Zašto članovi dobivaju ATU?</h2>
-            <p>Članovi ne dobivaju samo savjetovanje. Postaju korisnici i podržavatelji ALIMDAR ekosustava.</p>
-            <p>ATUtility (ATU) je digitalni utility token koji povezuje članove s pogodnostima, sadržajima i budućim mogućnostima ALIMDAR zajednice.</p>
-            <div class="notice card">
-              <strong>Važno:</strong> ATU nije dionica, nije vlasnički udio, ne daje pravo na dividendu i nije investicijski proizvod. ATU je utility token za korištenje unutar ALIMDAR ekosustava.
-            </div>
+            <h2>Što je ATUtility (ATU)?</h2>
+            <p>
+              ATU je utility token namijenjen korištenju unutar ALIMDAR ekosustava. ATU nije dionica,
+              nije vlasnički udio, nije financijski instrument i ne jamči zaradu.
+            </p>
+            <p>
+              ATU se može dodjeljivati članovima nakon potvrđene pretplate i koristiti za pogodnosti,
+              pristup sadržajima, buduće digitalne alate i aktivnosti zajednice.
+            </p>
           </div>
           <div class="card">
-            <h3>ATU se može koristiti za:</h3>
-            <ul>
-              <li>članske pogodnosti</li>
-              <li>pristup odabranim sadržajima</li>
-              <li>posebne programe</li>
-              <li>buduće digitalne usluge</li>
-              <li>sudjelovanje u zajednici</li>
-            </ul>
+            <h3>ATU dodjela</h3>
+            <p class="muted">
+              U prvoj verziji ATU se dodjeljuje ručno nakon potvrde članstva i uplate. Potpuno automatsko primanje ATU-a
+              uključuje se kasnije putem pametnog ugovora za članstvo.
+            </p>
+            <p class="small">
+              Važno: web stranica nikada ne smije imati pristup tvojem privatnom ključu ili seed phraseu.
+            </p>
           </div>
         </div>
       </section>
 
       <section id="payment">
         <div class="wrap">
-          <h2>Naplata članstva putem web stranice</h2>
-          <p class="lead">Ova prva verzija omogućuje izbor članstva, povezivanje MetaMaska i plaćanje u BNB na BNB Smart Chain mreži. Nakon potvrde uplate, ATU se dodjeljuje ručno iz vašeg MetaMaska.</p>
+          <h2>Plaćanje članstva</h2>
+          <p class="lead">
+            Za početnu verziju omogućujemo jednostavnu prijavu i ručnu potvrdu uplate. To je sigurnije dok se centar postepeno razvija.
+          </p>
 
-          <div class="card notice">
-            <h3>Odabrani paket</h3>
-            <div id="selectedPlanHr">Još nije odabran paket.</div>
+          <div class="grid3">
+            <div class="card">
+              <h3>Kripto plaćanja</h3>
+              <p>Za početak preporučeno:</p>
+              <ul>
+                <li>BNB na BNB Smart Chain mreži</li>
+                <li>USDC</li>
+                <li>USDT</li>
+              </ul>
+              <p class="small">Kasnije se može dodati ETH, BTC, POL ili drugi tokeni preko payment procesora.</p>
+            </div>
+            <div class="card">
+              <h3>Fiat plaćanja</h3>
+              <p>Najpraktičnije valute:</p>
+              <ul>
+                <li>EUR</li>
+                <li>USD</li>
+              </ul>
+              <p class="small">Za kartice i fiat uplatu koristi se Stripe ili sličan ovlašteni procesor.</p>
+            </div>
+            <div class="card">
+              <h3>Fiat → USDC</h3>
+              <p>
+                Za automatsku zamjenu fiat valute u USDC ne radimo vlastitu mjenjačnicu u prvoj fazi.
+                Koristi se on-ramp/payment partner koji provodi KYC/AML.
+              </p>
+            </div>
           </div>
 
-          <div class="payment-grid">
-            <div class="card">
-              <h3>1. Poveži MetaMask</h3>
-              <p class="muted">Wallet se koristi za uplatu članstva u BNB i za dodjelu ATU pogodnosti.</p>
-              <button class="btn gold" onclick="connectWallet()">Poveži MetaMask</button>
-            </div>
+          <div class="card mt">
+            <h3>Prijava i ručna potvrda uplate</h3>
+            <p class="muted">
+              Ispunite obrazac, pošaljite upit i nakon potvrde uplate članstvo se aktivira, a ATU se dodjeljuje na navedeni wallet.
+            </p>
 
-            <div class="card">
-              <h3>2. Izračun BNB</h3>
-              <p class="muted">BNB/USDC tečaj je ručno podesiv u datoteci <strong>js/app.js</strong>.</p>
-              <div class="form-row">
-                <label>BNB/USDC tečaj:</label>
-                <input id="bnbRateInput" type="number" step="0.01" value="650" onchange="updateBnbRate()" />
-              </div>
-              <button class="btn primary" onclick="calculateBNBForSelectedPlan()">Izračunaj BNB za odabrani paket</button>
-              <p id="bnbCalculationHr" class="status">Nema izračuna.</p>
-            </div>
-
-            <div class="card">
-              <h3>3. Plati članstvo</h3>
-              <p class="muted">MetaMask će otvoriti transakciju u BNB. Nakon potvrde, kopirajte TX hash i pošaljite prijavu.</p>
-              <button class="btn primary" onclick="paySelectedPlanWithBNB()">Plati BNB</button>
-              <p id="txStatusHr" class="status">Transakcija još nije pokrenuta.</p>
-            </div>
+            <form class="form" action="mailto:radmilatorovic@gmail.com" method="post" enctype="text/plain">
+              <label>Ime i prezime
+                <input name="Ime i prezime" type="text" required placeholder="Vaše ime i prezime" />
+              </label>
+              <label>Email
+                <input name="Email" type="email" required placeholder="vas@email.com" />
+              </label>
+              <label>Wallet adresa za ATU
+                <input name="Wallet adresa" type="text" placeholder="0x..." />
+              </label>
+              <label>Odabrano članstvo
+                <select name="Članstvo" id="planSelectHr">
+                  <option>Osnovno članstvo</option>
+                  <option>Savjetodavno članstvo</option>
+                  <option>Poslovno članstvo</option>
+                </select>
+              </label>
+              <label>Način plaćanja
+                <select name="Način plaćanja">
+                  <option>BNB</option>
+                  <option>USDC</option>
+                  <option>USDT</option>
+                  <option>EUR / kartica ili bankovna uplata</option>
+                  <option>USD / kartica ili bankovna uplata</option>
+                </select>
+              </label>
+              <label>Poruka
+                <textarea name="Poruka" rows="4" placeholder="Napišite pitanje ili pošaljite TX hash nakon uplate."></textarea>
+              </label>
+              <button class="btn primary" type="submit">Pošalji prijavu / upit</button>
+            </form>
           </div>
         </div>
       </section>
@@ -161,21 +225,22 @@
       <section id="contact">
         <div class="wrap grid2">
           <div>
-            <h2>Prijava članstva i upit</h2>
-            <p>Za početnu fazu ALIMDAR-a, prijave i upiti idu na email. Tako se može vidjeti stvarna zainteresiranost za učenje, savjetovanje i razvoj.</p>
-            <p class="muted">Nakon uplate, korisnik šalje prijavu s imenom, emailom, wallet adresom i TX hashom. Nakon provjere, članstvo se aktivira i ATU se dodjeljuje ručno.</p>
+            <h2>Kontakt</h2>
+            <p>
+              Za članstvo, savjetovanje, uplatu i dodjelu ATU pošaljite upit emailom. Prva faza rada centra temelji se na izravnoj komunikaciji i ručnoj potvrdi članstva.
+            </p>
+            <div class="actions">
+              <a class="btn gold" href="mailto:radmilatorovic@gmail.com?subject=ALIMDAR%20članstvo%20i%20ATU">Pošalji email</a>
+              <button class="btn" type="button" onclick="connectWallet()">Poveži MetaMask</button>
+            </div>
           </div>
-          <form class="card" onsubmit="sendMembershipEmail(event)">
-            <label>Ime i prezime</label>
-            <input id="memberName" required placeholder="Ime i prezime" />
-            <label>Email</label>
-            <input id="memberEmail" type="email" required placeholder="email@example.com" />
-            <label>Wallet adresa</label>
-            <input id="memberWallet" placeholder="0x..." />
-            <label>TX hash / napomena</label>
-            <textarea id="memberMessage" rows="5" placeholder="Unesite TX hash ili pitanje..."></textarea>
-            <button class="btn gold" type="submit">Pošalji prijavu na email</button>
-          </form>
+          <div class="card notice">
+            <h3>Automatsko primanje ATU</h3>
+            <p>
+              Potpuna automatizacija zahtijeva pametni ugovor koji prima uplatu i šalje ATU. To je sljedeća faza.
+              Do tada je sigurniji model: prijava → uplata → ručna potvrda → dodjela ATU.
+            </p>
+          </div>
         </div>
       </section>
     </div>
@@ -184,73 +249,28 @@
       <section class="hero">
         <div class="wrap grid2">
           <div>
-            <div class="badge">Technology Advisory Center · Blockchain · Web3 · AI</div>
-            <h1>Technology Is Not Something to Fear. Technology Is a Tool.</h1>
-            <p class="lead">ALIMDAR helps people understand and use modern technologies through consulting, practical examples and real-world projects.</p>
+            <div class="badge">Blockchain · Web3 · AI · Consulting · ATUtility</div>
+            <h1>Technology is not something to fear. Technology is a tool.</h1>
+            <p class="lead">
+              ALIMDAR is a technology advisory center for Blockchain, Web3 and digital technologies.
+              Through membership, users join the community, receive consulting and may receive ATUtility (ATU).
+            </p>
             <div class="actions">
-              <a class="btn primary" href="#membership">Become a Member</a>
-              <button class="btn gold" onclick="connectWallet()">Connect MetaMask</button>
-              <a class="btn" href="#contact">Send Inquiry</a>
+              <a class="btn primary" href="#membership">Become a member</a>
+              <button class="btn gold" type="button" onclick="connectWallet()">Connect MetaMask</button>
+              <a class="btn" href="#contact">Contact</a>
             </div>
             <div class="status" id="walletStatusEn">Wallet not connected.</div>
           </div>
-          <div class="card center-card">
-            <div class="coin">ATU</div>
+          <div class="card center">
+            <img class="hero-logo" src="assets/atu-logo.png" alt="ATUtility logo" onerror="this.style.display='none';" />
+            <div class="coin-fallback">ATU</div>
             <h2>ATUtility</h2>
-            <p class="muted">Utility token of the ALIMDAR community for membership, benefits, digital content and future services.</p>
+            <p class="muted">Utility token for ALIMDAR membership, benefits, content and future services.</p>
           </div>
         </div>
       </section>
-
-      <section>
-        <div class="wrap">
-          <h2>ALIMDAR Membership</h2>
-          <p class="lead">After subscription and community access, consulting, development and practical technology use begin.</p>
-          <div class="pricing">
-            <div class="price-card"><h3>Basic Membership</h3><div class="price">€19</div><div class="per">monthly · approx. 21 USDC</div><ul><li>Community access</li><li>Basic guides and updates</li><li>Email inquiries</li><li>ATU benefit: 100 ATU</li></ul><button class="btn primary" onclick="selectPlan('Basic Membership',19,21,100)">Choose</button></div>
-            <div class="price-card popular"><span class="tag">Recommended</span><h3>Advisory Membership</h3><div class="price">€49</div><div class="per">monthly · approx. 53 USDC</div><ul><li>All Basic benefits</li><li>Technology consulting</li><li>AI, Web3 and digital tools</li><li>ATU benefit: 300 ATU</li></ul><button class="btn gold" onclick="selectPlan('Advisory Membership',49,53,300)">Choose</button></div>
-            <div class="price-card"><h3>Business Membership</h3><div class="price">€129</div><div class="per">monthly · approx. 139 USDC</div><ul><li>Support for businesses</li><li>Digital transformation</li><li>Project support</li><li>ATU benefit: 1000 ATU</li></ul><button class="btn primary" onclick="selectPlan('Business Membership',129,139,1000)">Choose</button></div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap grid2">
-          <div>
-            <h2>Why do members receive ATU?</h2>
-            <p>Members receive more than consulting. They become users and supporters of the ALIMDAR ecosystem.</p>
-            <p>ATUtility (ATU) is a digital utility token connecting members with benefits, content and future opportunities of the ALIMDAR community.</p>
-            <div class="notice card"><strong>Important:</strong> ATU is not a share, does not represent ownership, does not grant dividend rights and is not an investment product. ATU is a utility token for use within the ALIMDAR ecosystem.</div>
-          </div>
-          <div class="card"><h3>ATU may be used for:</h3><ul><li>membership benefits</li><li>selected content access</li><li>special programs</li><li>future digital services</li><li>community participation</li></ul></div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap">
-          <h2>Membership Payment</h2>
-          <p class="lead">This first version supports plan selection, MetaMask connection and BNB payment on BNB Smart Chain. After payment confirmation, ATU is assigned manually from your MetaMask.</p>
-          <div class="card notice"><h3>Selected plan</h3><div id="selectedPlanEn">No plan selected yet.</div></div>
-          <div class="payment-grid">
-            <div class="card"><h3>1. Connect MetaMask</h3><p class="muted">Wallet is used for BNB membership payment and ATU benefit assignment.</p><button class="btn gold" onclick="connectWallet()">Connect MetaMask</button></div>
-            <div class="card"><h3>2. Calculate BNB</h3><p class="muted">BNB/USDC rate is editable in <strong>js/app.js</strong>.</p><button class="btn primary" onclick="calculateBNBForSelectedPlan()">Calculate BNB</button><p id="bnbCalculationEn" class="status">No calculation.</p></div>
-            <div class="card"><h3>3. Pay Membership</h3><p class="muted">MetaMask opens a BNB transaction. After confirmation, copy the TX hash and send the application.</p><button class="btn primary" onclick="paySelectedPlanWithBNB()">Pay BNB</button><p id="txStatusEn" class="status">Transaction not started.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="wrap grid2">
-          <div><h2>Membership Application</h2><p>For the first ALIMDAR phase, applications and inquiries are handled by email to measure real interest in learning, consulting and development.</p></div>
-          <form class="card" onsubmit="sendMembershipEmail(event)">
-            <label>Full name</label><input id="memberNameEn" placeholder="Full name" />
-            <label>Email</label><input id="memberEmailEn" type="email" placeholder="email@example.com" />
-            <label>Wallet address</label><input id="memberWalletEn" placeholder="0x..." />
-            <label>TX hash / message</label><textarea id="memberMessageEn" rows="5" placeholder="Enter TX hash or question..."></textarea>
-            <button class="btn gold" type="submit">Send email application</button>
-          </form>
-        </div>
-      </section>
+      <section><div class="wrap"><h2>English version</h2><p class="lead">The first launch version is focused on membership, email inquiry, MetaMask connection and manual ATU distribution after confirmed payment.</p><a class="btn gold" href="mailto:radmilatorovic@gmail.com?subject=ALIMDAR%20membership%20and%20ATU">Send email inquiry</a></div></section>
     </div>
   </main>
 
@@ -258,11 +278,10 @@
     <div class="wrap">
       <strong>ALIMDAR</strong><br />
       Tehnološko-savjetodavni centar za Blockchain, Web3 i digitalne tehnologije<br />
-      <span class="small">© 2026 ALIMDAR · Znanje, transparentnost i tehnologija u službi čovjeka.</span>
+      <span class="small">© 2026 ALIMDAR · ATU utility token · Informativno i savjetodavno, bez investicijskih jamstava.</span>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

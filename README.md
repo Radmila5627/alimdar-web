@@ -1,69 +1,25 @@
-# ALIMDAR Web App
+# ALIMDAR Web
 
-Static HTML/CSS/JS website for ALIMDAR membership, MetaMask connection and BNB payment flow.
+Prva javna verzija ALIMDAR stranice za članstvo, ATUtility (ATU), kontakt i ručnu potvrdu uplata.
 
-## What this version does
+## Datoteke
 
-- Shows ALIMDAR membership packages.
-- Connects MetaMask on BNB Smart Chain.
-- Calculates BNB amount based on manually set BNB/USDC rate.
-- Sends BNB membership payment to the configured wallet.
-- Prepares an email membership application with wallet and TX hash.
-- ATU is assigned manually after payment confirmation.
+- `index.html` — glavna stranica
+- `css/stil.css` — stilovi
+- `js/app.js` — MetaMask i izbor članstva
+- `assets/atu-logo.png` — ovdje dodati logo
+- `contracts/README_AUTOMATIC_ATU.md` — napomena za kasniju automatizaciju
 
-## Important
+## Logo
 
-This version does **not** automatically transfer ATU from your MetaMask. A website must never hold your private key or seed phrase.
+U mapu `assets` dodati logo pod nazivom:
 
-For the first public launch, use this flow:
+`atu-logo.png`
 
-1. User chooses membership.
-2. User connects MetaMask.
-3. User pays BNB.
-4. User sends email application with TX hash.
-5. You verify payment and manually send ATU from MetaMask.
+Ako logo nije dodan, stranica prikazuje tekstualni ATU krug.
 
-## Files
+## Plaćanja
 
-```text
-alimdar-web/
-├── index.html
-├── css/style.css
-├── js/app.js
-├── vercel.json
-├── contracts/README_AUTOMATIC_ATU.md
-└── assets/
-```
+Prva verzija koristi ručnu potvrdu: prijava → uplata → potvrda → ručna dodjela ATU.
 
-## Edit before deployment
-
-Open `js/app.js` and verify:
-
-```js
-contactEmail: "radmilatorovic@gmail.com"
-paymentWallet: "0xAAE931b63Be266D44e0Be5d66fedE0c1c3b53379"
-atuContract: "0x73c711b9567049c810Bb65920ED74606BB9Ae697"
-bnbUsdcRate: 650
-```
-
-If your BNB payment wallet is different, change `paymentWallet` before deploying.
-
-## Deploy to GitHub + Vercel
-
-1. Create a new GitHub repository, for example `alimdar-web`.
-2. Upload all files from this folder.
-3. In Vercel, choose **Add New Project**.
-4. Import the GitHub repository.
-5. Framework preset: **Other** / static site.
-6. Deploy.
-
-## Security
-
-Never upload or paste:
-
-- seed phrase
-- private key
-- wallet password
-- `.env` file with secrets
-
-Only public wallet addresses and public contract addresses belong in this frontend.
+Potpuna automatizacija ATU dodjele ide kasnije preko pametnog ugovora.
