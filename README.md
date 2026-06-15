@@ -1,25 +1,11 @@
 # ALIMDAR Web
 
-Prva javna verzija ALIMDAR stranice za članstvo, ATUtility (ATU), kontakt i ručnu potvrdu uplata.
+Static GitHub/Vercel website for ALIMDAR Technology & Advisory Center powered by ATUtility.
 
-## Datoteke
+Files:
+- index.html
+- stil.css
+- app.js
+- assets/atu-logo.png
 
-- `index.html` — glavna stranica
-- `css/stil.css` — stilovi
-- `js/app.js` — MetaMask i izbor članstva
-- `assets/atu-logo.png` — ovdje dodati logo
-- `contracts/README_AUTOMATIC_ATU.md` — napomena za kasniju automatizaciju
-
-## Logo
-
-U mapu `assets` dodati logo pod nazivom:
-
-`atu-logo.png`
-
-Ako logo nije dodan, stranica prikazuje tekstualni ATU krug.
-
-## Plaćanja
-
-Prva verzija koristi ručnu potvrdu: prijava → uplata → potvrda → ručna dodjela ATU.
-
-Potpuna automatizacija ATU dodjele ide kasnije preko pametnog ugovora.
+Deploy on Vercel as a static site.
