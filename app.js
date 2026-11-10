@@ -18,10 +18,13 @@ async function connectWallet() {
   try {
     const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
     connectedWallet = accounts[0];
-    document.getElementById("walletStatus").innerText = "Povezani wallet: " + connectedWallet;
+    const status = document.getElementById("walletStatus");
+    if (status) status.innerText = "Povezani novčanik: " + connectedWallet + ". Povezivanje nije uplata.";
     const walletInput = document.getElementById("walletInput");
     if (walletInput) walletInput.value = connectedWallet;
   } catch (error) {
+    const status = document.getElementById("walletStatus");
+    if (status) status.innerText = "Povezivanje nije uspjelo ili je odbijeno."; 
     alert("Povezivanje MetaMaska nije uspjelo.");
   }
 }
@@ -40,7 +43,7 @@ function openEmail() {
     "Molim upute za uplatu i aktivaciju članstva.\n\n" +
     "Hvala."
   );
-  window.location.href = "mailto:radmilatorovic@gmail.com?subject=" + subject + "&body=" + body;
+  window.location.href = "mailto:radmilaradenovic@pm.me?subject=" + subject + "&body=" + body;
 }
 
 function sendContactEmail() {
@@ -60,5 +63,5 @@ function sendContactEmail() {
     "Odabrani paket: " + planText + "\n\n" +
     "Poruka:\n" + message
   );
-  window.location.href = "mailto:radmilatorovic@gmail.com?subject=" + subject + "&body=" + body;
+  window.location.href = "mailto:radmilaradenovic@pm.me?subject=" + subject + "&body=" + body;
 }
