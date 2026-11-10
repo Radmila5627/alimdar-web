@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -154,7 +153,7 @@
             <li>Projektno savjetovanje</li>
             <li>Napredne ATU pogodnosti</li>
           </ul>
-          <button class="btn primary" onclick="selectPlan('Poslovno članstvo', 300, 1000)">
+          <button class="btn primary" onclick="selectPlan('Poslovno članstvo', 150, 1000)">
             Odaberi
           </button>
         </article>
@@ -212,20 +211,19 @@
       <h2>Plaćanje članstva</h2>
 
       <p class="section-lead">
-        Za prvu verziju ALIMDAR-a koristimo jednostavan i siguran proces:
-        korisnik pošalje upit, dobije upute, uplati, a ATU se dodjeljuje nakon potvrde uplate.
+        Članstvo se ugovara putem upita. Nakon što potvrdimo paket i dostavimo upute za uplatu, članstvo se aktivira po evidentiranoj uplati. ATU pogodnosti dodjeljuju se prema uvjetima odabranog članstva.
       </p>
 
       <div class="grid">
         <article class="card">
-          <h3>Kripto plaćanja</h3>
+          <h3>Upit za kripto plaćanje</h3>
           <ul>
             <li>BNB</li>
             <li>USDC</li>
             <li>USDT</li>
           </ul>
           <p class="muted">
-            Kasnije se mogu dodati ETH, BTC i druge valute putem payment procesora.
+            Dostupnost valute, mrežu, iznos i adresu za uplatu potvrđujemo pojedinačno prije plaćanja. Ne šaljite sredstva bez naših uputa.
           </p>
         </article>
 
@@ -236,26 +234,25 @@
             <li>USD</li>
           </ul>
           <p class="muted">
-            Fiat plaćanja se u prvoj fazi obrađuju ručno ili preko procesora plaćanja.
-            Za automatsku zamjenu fiat → USDC koristi se licencirani on-ramp/payment partner.
+            Za uplatu u EUR ili USD najprije zatražite upute. Način plaćanja i podatke primatelja dostavljamo nakon potvrde članstva.
           </p>
         </article>
 
         <article class="card">
-          <h3>Automatski ATU</h3>
+          <h3>Dodjela ATU pogodnosti</h3>
           <p>
-            Potpuno automatska dodjela ATU aktivira se kasnije putem posebnog smart contracta.
+            ATU se ne dodjeljuje samim povezivanjem novčanika. Dodjela slijedi nakon potvrđene uplate i provjere uvjeta članstva. Automatizacija još nije aktivna.
           </p>
           <p class="muted">
-            Web, Python ili Vercel ne smiju imati pristup privatnom ključu MetaMaska.
+            Nikada ne šaljite privatni ključ ili tajnu frazu novčanika.
           </p>
         </article>
       </div>
 
       <div class="card notice selected-box">
-        <h3>MetaMask status</h3>
+        <h3>MetaMask – neobavezno povezivanje</h3>
         <button class="btn primary" onclick="connectWallet()">Poveži MetaMask</button>
-        <p id="walletStatus" class="status">Wallet nije povezan.</p>
+        <p id="walletStatus" class="status" role="status">Novčanik nije povezan. Za slanje upita nije potreban MetaMask.</p>
       </div>
     </div>
   </section>
@@ -318,4 +315,3 @@
 
 </body>
 </html>
-```
